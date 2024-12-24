@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie App</title>
+    <link href="./output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900">
+    <div class="container mx-auto m-4">
+      <header>
+        <h1 class="text-center text-white text-4xl font-semibold p-5">
+          Movie Search App
+        </h1>
+        <div class="flex justify-center gap-5 mb-4">
+          <input type="text" id="inputValue" class="px-14 py-5 rounded-md" />
+          <button
+            type="button"
+            id="searchButton"
+            class="py-5 px-6 bg-red-400 rounded-lg hover:opacity-70"
+          >
+            Search
+          </button>
+        </div>
+      </header>
+      <main
+        id="movieGrid"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+      >
+        <!-- all movies will be visible here -->
+      </main>
+    </div>
+    <script>
+      let inputValue = document.getElementById("inputValue");
+      let button = document.getElementById("searchButton");
+      let movieGrid = document.getElementById("movieGrid");
+
+      const apiKey = "e51e9e50";
+      // const query = inputValue.value.trim();
+      const query = "avengers";
+      if (!query) {
+        alert("please add your search");
+        return;
+      }
+      const apiURL = `http://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
+      fetch(apiURL)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Something went wrong");
+          }
+          return response.json();
+        })
+        .then(displayMovies)
+        .catch((err) => alert(err.message));
+
+      const displayMovies = (data) => {
+        movieGrid.innerHTML = "";
+        if (data.Response == "False") {
+          movieGrid.innerHTML = `<p class="text-white text-xl text-center">"${inputValue.value}" doesnot exist <p>`;
+        }
+        for (let movie of data.Search) {
+          let movieCard = document.createElement("div");
+          movieCard.classList.add(
+            "bg-gray-700",
+            "rounded-lg",
+            "overflow-hidden"
+          );
+          movieCard.innerHTML = `<img src="${
+            movie.Poster !== "N/A"
+              ? movie.Poster
+              : "https://via.placeholder.com/300x450?text=No+Image"
+          } alt="${movie.Title}" class="w-full h-72 object-cover"/>
+           <div class="text-xl font-semibold text-center">
+            <h2 >${movie.Title}</h2>
+            <p>year:${movie.Year}</p>
+  
+            </div>
+           `;
+          movieGrid.appendChild(movieCard);
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Js</title>
+  </head>
+  <body>
+    <script>
+      //asynchronous
+      setTimeout(
+        (a, b) => {
+          console.log(a + b);
+        },
+        3000,
+        10,
+        20
+      );
+
+      setTimeout(() => {
+        console.log("this will be printed after 2 secs");
+      }, 2000);
+
+      //   setInterval(() => {
+      //     console.log("this will get call every 1 second");
+      //   }, 1000);
+      //synchronous
+      console.log("start");
+      console.log("do some adding");
+
+      console.log("end");
+
+      const promise = new Promise((resolve, reject) => {
+        let success = false;
+        if (success) {
+          resolve("operation fulfilled");
+        } else {
+          reject("operation denied");
+        }
+      });
+      promise
+        .then((message) => {
+          console.log("success:" + message);
+        })
+        .catch((message) => {
+          console.log("rejected:" + message);
+        });
+    </script>
+  </body>
+</html>

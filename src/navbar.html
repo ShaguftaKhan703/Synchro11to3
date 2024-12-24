@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <!-- Portfolio Label -->
+        <div class="text-xl font-semibold text-gray-800">Portfolio</div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8">
+          <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">About</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">Project</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">Skills</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">Work</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">Contact Us</a>
+        </div>
+
+        <!-- Mobile Menu Icon -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden fixed inset-0 bg-white bg-opacity-95 flex flex-col items-center justify-center space-y-8 text-xl font-semibold text-gray-800"
+      >
+        <a href="#" class="hover:text-gray-900">Home</a>
+        <a href="#" class="hover:text-gray-900">About</a>
+        <a href="#" class="hover:text-gray-900">Project</a>
+        <a href="#" class="hover:text-gray-900">Skills</a>
+        <a href="#" class="hover:text-gray-900">Work</a>
+        <a href="#" class="hover:text-gray-900">Contact Us</a>
+      </div>
+    </nav>
+
+    <!-- solid style -->
+    <i class="fa-solid fa-user fa-2xl"></i>
+
+    <!-- regular style -->
+    <i class="fa-regular fa-user fa-xl"></i>
+
+    <!-- light style -->
+    <i class="fa-light fa-user fa-2xl"></i>
+
+    <!-- thin style -->
+    <i class="fa-thin fa-user"></i>
+
+    <!-- duotone style -->
+    <i class="fa-duotone fa-solid fa-user"></i>
+
+    <!-- sharp solid style -->
+    <i class="fa-sharp fa-solid fa-user"></i>
+
+    <!-- sharp regular style -->
+    <i class="fa-sharp fa-regular fa-user"></i>
+
+    <!-- sharp light style -->
+    <i class="fa-sharp fa-light fa-user"></i>
+
+    <!-- sharp thin style -->
+    <i class="fa-sharp fa-thin fa-user"></i>
+
+    <!-- all new sharp duotone style -->
+    <i class="fa-sharp-duotone fa-solid fa-user"></i>
+
+    <!--brand icon-->
+    <i class="fa-brands fa-github-square fa-2xl"></i>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

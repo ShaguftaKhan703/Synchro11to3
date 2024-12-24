@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+    <style>
+      .main-container {
+        background-color: bisque;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="heading">This is heading</h1>
+      <p id="para">This is simple paragraph</p>
+    </div>
+    <button type="button" onclick="deleteNode()">Remove</button>
+    <button type="button" onclick="addNode()">Add</button>
+    <button type="button" onclick="replaceNode()">Replace</button>
+
+    <script>
+      let parentElem = document.getElementById("main");
+      let childElem = document.getElementById("para");
+      function deleteNode() {
+        parentElem.removeChild(childElem);
+        alert("child deleted");
+      }
+      function addNode() {
+        childElem.parentNode.insertAdjacentHTML(
+          "beforebegin",
+          "<p> This is from js </p>"
+        );
+      }
+      function replaceNode() {
+        let newChild = document.createElement("p");
+        let content = document.createTextNode("This is replace paragraph");
+        newChild.appendChild(content);
+        parentElem.replaceChild(newChild, childElem);
+      }
+      parentElem.setAttribute("class", "main-container");
+    </script>
+  </body>
+</html>

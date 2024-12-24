@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>December-03</title>
+  </head>
+  <body>
+    <h1 id="text-1"></h1>
+    <p id="send_msg-1"></p>
+    <p id="rec_msg"></p>
+    <h1 id="text-2"></h1>
+    <p id="send_msg-2"></p>
+    <script>
+      //   const cooking = new Promise((resolve, reject) => {
+      //     let ingredients = false;
+      //     if (ingredients) {
+      //       resolve("Meal is ready!!");
+      //     } else {
+      //       reject("Ingredients not available");
+      //     }
+      //   });
+      //   cooking
+      //     .then((resolve) => console.log("success", resolve))
+      //     .catch((reject) => console.log("Meal not cooked,", reject));
+      //   console.log(cooking);
+      let msg_1 = prompt("Enter you message here:");
+      let msg_2 = prompt("Enter you message here:");
+      function sendMessage1(message, callback) {
+        document.getElementById("text-1").innerHTML = "Person-1: " + message;
+        console.log("Send Message: ", message);
+        setTimeout(() => {
+          document.getElementById("send_msg-1").innerHTML =
+            "Message delivered!";
+        }, 1000);
+        callback();
+      }
+      function sendMessage2(message) {
+        setTimeout(() => {
+          document.getElementById("rec_msg").innerHTML = "Message received!";
+        }, 1000);
+        document.getElementById("text-2").innerHTML = "Person-2: " + message;
+        console.log("Send Message: ", message);
+        setTimeout(() => {
+          document.getElementById("send_msg-2").innerHTML =
+            "Message delivered!";
+        }, 1000);
+      }
+      sendMessage1(msg_1, sendMessage2(msg_2));
+
+      console.log("You can continue typing...");
+    </script>
+  </body>
+</html>

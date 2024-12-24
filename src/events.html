@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Event handling</title>
+  </head>
+  <body class="bg-fuchsia-200">
+    <section class="container">
+      <form class="inline-block text-center">
+        <input
+          type="text"
+          placeholder="your name"
+          class="p-4"
+          onfocus="highlightfield(this)"
+          onkeyup="alert('you released the key')"
+        />
+        <textarea
+          type="text"
+          placeholder="feedback here"
+          onchange="alert('changed content')"
+          class=""
+        ></textarea>
+        <button
+          type="button"
+          id="btn"
+          onclick="clicked()"
+          class="p-5 bg-purple-400 m-4"
+        >
+          Search
+        </button>
+      </form>
+    </section>
+    <script>
+      function highlightfield(elm) {
+        elm.style.background = "yellow";
+      }
+      function clicked() {
+        document.getElementById("btn").innerText = "clicked";
+      }
+      let x = 15;
+      let y = 10;
+      console.log(--y);
+      console.log(y);
+      let person = { name: "Clark", surname: "Kent", age: "36" };
+
+      // Loop through all the properties in the object
+      for (let prop in person) {
+        document.write("<p>" + prop + " = " + person[prop] + "</p>");
+      }
+    </script>
+  </body>
+</html>

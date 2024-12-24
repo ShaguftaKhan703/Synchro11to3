@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nov 25</title>
+  </head>
+  <body>
+    <a href="https://www.abcd.com" id="link" onclick="set_attr()">Link</a>
+    <button type="button" id="btn" onclick="btntype()">click</button>
+    <script>
+      let mylink = document.getElementById("link");
+      function set_attr() {
+        let set = mylink.setAttribute("id", "new_class");
+        alert(set);
+      }
+      function btntype() {
+        let btn = document.getElementById("btn");
+        let type = btn.getAttribute("type");
+        alert(type);
+      }
+    </script>
+  </body>
+</html>

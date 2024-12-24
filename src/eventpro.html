@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 300px;
+        background-color: yellowgreen;
+        border: 2px solid black;
+      }
+      .parent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 200px;
+        background-color: yellow;
+        border: 2px solid black;
+      }
+      .child {
+        width: 50%;
+        height: 100px;
+        background-color: orange;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="main-container"
+      onclick="alert('you have clicked the main div')"
+    >
+      <div class="parent">
+        <div class="child"></div>
+      </div>
+    </div>
+    <script>
+      let alldiv = document.getElementsByTagName("div");
+    </script>
+  </body>
+</html>

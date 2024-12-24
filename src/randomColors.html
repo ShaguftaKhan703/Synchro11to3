@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Color Generator</title>
+    <style>
+      /* .main {
+        display: flex;
+        gap: 5px;
+      } */
+      .container {
+        width: 100%;
+        height: 200px;
+        background-color: antiquewhite;
+        border: 2px solid black;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">I will change color</div>
+    <div class="container">I will change color</div>
+    <div class="container">I will change color</div>
+    <button type="button" onclick="MainChange()">Generate</button>
+
+    <script>
+      let container = document.getElementsByClassName("container");
+
+      function ChangeColor() {
+        let r = Math.ceil(Math.random() * 300);
+        let g = Math.ceil(Math.random() * 300);
+        let b = Math.ceil(Math.random() * 300);
+        let a = Math.ceil(Math.random() * 10);
+        return `rgba(${r},${g},${b}.${a})`;
+      }
+      setInterval(() => {
+        for (let i in container) {
+          container[i].style.background = ChangeColor();
+        }
+      }, 2000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script>
+      alert("this is from body:" + document.body);
+    </script> -->
+  </head>
+  <body>
+    <p class="test">this is the 1st element in the array</p>
+    <p class="block test">this is the 2nd element in the array</p>
+    <p class="block test">this is the 3rd element in the array</p>
+    <script>
+      //   let matches = document.getElementsByTagName("p"); //[p1,p2,p3]
+      //   for (let i in matches) {
+      //     matches[i].style.color = "purple";
+      //   }
+      alert("this is from body:" + document.body);
+      let classmatch = document.getElementsByClassName("block");
+      for (let i in classmatch) {
+        classmatch[i].style.fontSize = "32px";
+      }
+    </script>
+  </body>
+</html>

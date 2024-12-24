@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callbacks</title>
+  </head>
+  <body>
+    <script>
+      function greet(name, callback) {
+        console.log("hello!" + name);
+        callback();
+      }
+      function goodbye() {
+        console.log("bye bye");
+      }
+      greet("john", goodbye);
+
+      function first() {
+        console.log("Hi!! from 1st function");
+        second(first);
+      }
+      function second(callback) {
+        console.log("Hi!! from 2nd function");
+        callback();
+      }
+      first();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Navigation</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="title">This is heading</h1>
+      <p id="hint">This is sample paragraph</p>
+    </div>
+    <script>
+      let container = document.querySelector("#container");
+      let title = document.querySelector("#title");
+      let hint = document.querySelector("#hint");
+      container.style.background = "yellow";
+      alert(title.nextSibling.nodeName);
+      alert(hint.previousSibling.nodeName);
+      alert(title.nextElementSibling.nodeName);
+      alert(hint.previousElementSibling.nodeName);
+      alert(container.firstChild.nodeName);
+      alert(container.lastChild.nodeName);
+      alert(container.firstElementChild.nodeName);
+      alert(container.lastElementChild.nodeName);
+    </script>
+  </body>
+</html>

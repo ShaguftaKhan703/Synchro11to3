@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h1>JavaScript DOM class</h1>
+    <p id="intro">this is main text</p>
+    <p id="para">this is the default paragraph</p> -->
+
+    <button onclick="changeImg()">Change</button><br />
+    <input id="guess" type="text" placeholder="write your guess here" /><br />
+    <p id="guessprint"></p>
+    <p id="hint"></p>
+    <p id="chances"></p>
+    <p id="gameover"></p>
+    <button type="button" onclick="randomguess()">Submit</button>
+    <!-- <input id="num" type="text" /><br />
+    <p id="result"></p>
+    <button onclick="numCheck()">clicked</button><br /> -->
+    <script>
+      let guess = document.getElementById("guess");
+      let text = document.getElementById("guessprint");
+      let hint = document.getElementById("hint");
+      let random = Math.round(Math.random() * 100);
+      let chance = document.getElementById("chances");
+      console.log(random);
+      if (random % 2 == 0) {
+        hint.innerHTML = "Hint: even number";
+      } else {
+        hint.innerHTML = "Hint: odd number";
+      }
+      function randomguess() {
+        if (guess.value == random) {
+          text.innerHTML = "Your guess matched";
+        } else if (random == 0 || random < 10) {
+          text.innerHTML = "The number is less than 10";
+        } else if (random == 10 || random < 20) {
+          text.innerHTML = "The number is between 10 and 20";
+        } else if (random == 20 || random < 30) {
+          text.innerHTML = "The number is between 20 and 30";
+        } else if (random == 30 || random < 40) {
+          text.innerHTML = "The number is between 30 and 40";
+        } else if (random == 40 || random < 50) {
+          text.innerHTML = "The number is between 40 and 50";
+        } else if (random == 50 || random < 60) {
+          text.innerHTML = "The number is between 50 and 60";
+        } else if (random == 60 || random < 70) {
+          text.innerHTML = "The number is between 60 and 70";
+        } else if (random == 70 || random < 80) {
+          text.innerHTML = "The number is between 70 and 80";
+        } else if (random == 80 || random < 90) {
+          text.innerHTML = "The number is between 80 and 90";
+        } else if (random == 90 || random <= 100) {
+          text.innerHTML = "The number is between 90 and 100";
+        } else {
+          text.innerHTML = "invalid guess";
+        }
+      }
+    </script>
+  </body>
+</html>
